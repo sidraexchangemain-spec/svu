@@ -6,6 +6,8 @@ type ModalId = "directors" | "corporate" | "location";
 
 export default function Home() {
   const [activeModal, setActiveModal] = useState<ModalId | null>(null);
+  const openModal = (id: ModalId) => setActiveModal(id);
+  const closeModal = (_id?: ModalId) => setActiveModal(null);
   return (
     <>
 <header>
