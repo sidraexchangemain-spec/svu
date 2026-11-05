@@ -22,7 +22,7 @@ export default function Home() {
         <div className="service-box">
             <img src="https://thumbs.dreamstime.com/b/arbitration-blue-gradient-concept-icon-arbitration-blue-gradient-concept-icon-employment-contract-time-management-productivity-335021685.jpg" alt="Arbitration" />
             <div className="service-title">Arbitration</div>
-            <Link className="service-action" href="/arbitration">Submit Arbitration Enquiry</Link>
+            <Link className="service-action" href="/arbitration">Request Arbitration Support</Link>
         </div>
         <div className="service-box">
             <img src="https://static.vecteezy.com/system/resources/previews/023/518/558/non_2x/legal-service-icon-judge-gavel-and-open-law-book-vector.jpg" alt="Legal Services" />

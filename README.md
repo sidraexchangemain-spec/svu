@@ -1,6 +1,6 @@
 # SVU Developers – Next.js website with Google Sheets enquiries
 
-The original corporate page styling and existing information are retained. Clicking the Arbitration or Legal Services action navigates to a dedicated page (`/arbitration` or `/legal-services`) containing the relevant enquiry form. On submit, the browser sends the data to the Next.js API route and the server appends it to your Google Sheet. The visitor is not redirected to Google Sheets.
+The original corporate page styling and existing information are retained. Clicking the Arbitration or Legal Services action navigates to a dedicated page (`/arbitration` or `/legal-services`) containing the relevant service request page. On submit, the browser sends the data to the Next.js API route and the server appends it to your Google Sheet. The visitor is not redirected to Google Sheets.
 
 ## 1. Create the Google Sheet
 
@@ -32,7 +32,7 @@ The original corporate page styling and existing information are retained. Click
    npm run dev
    ```
 
-5. Submit a test enquiry from each service card and confirm that a new row appears in the `Enquiries` tab.
+5. Submit a test request from each service card and confirm that a new row appears in the `Enquiries` tab.
 
 ## 4. Deploying
 
@@ -43,10 +43,10 @@ Add the same two environment variables to your hosting provider's server-side en
 - Arbitration and Legal Services have separate form headings and requirement choices.
 - The form is displayed on its own website page and submits within the website.
 - Success or error feedback appears in the form; no Google Sheets redirect occurs.
-- The backend writes the enquiry timestamp, service type and submitted details to the sheet.
+- The backend writes the request timestamp, service type and submitted details to the sheet.
 - The optional document field currently records a document name only; it does not upload file contents. Secure file upload/storage can be added separately.
 
 ## Notes
 
-- Google Sheets stores the enquiry records; it does not create downloadable Excel files automatically. You can use **File → Download → Microsoft Excel (.xlsx)** in Google Sheets whenever needed.
+- Google Sheets stores the request records; it does not create downloadable Excel files automatically. You can use **File → Download → Microsoft Excel (.xlsx)** in Google Sheets whenever needed.
 - Do not share the service-account JSON or commit `.env.local` to Git.

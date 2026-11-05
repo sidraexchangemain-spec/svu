@@ -25,9 +25,9 @@ export default function EnquiryForm({ serviceType }: { serviceType: ServiceType 
         body: JSON.stringify({ ...payload, serviceType }),
       });
       const result = await response.json();
-      if (!response.ok) throw new Error(result.error || "Unable to submit your enquiry.");
+      if (!response.ok) throw new Error(result.error || "Unable to submit your request.");
       setIsError(false);
-      setMessage("Your enquiry has been submitted successfully. Our team will contact you.");
+      setMessage("Your request has been submitted successfully. Our team will contact you.");
       form.reset();
     } catch (error) {
       setIsError(true);
@@ -43,10 +43,10 @@ export default function EnquiryForm({ serviceType }: { serviceType: ServiceType 
         <div className="enquiry-page-top">
           <Link href="/" className="back-link">← Back to Home</Link>
           <div className="enquiry-brand">SVU DEVELOPERS PVT LTD</div>
-          <h1>{serviceType} Enquiry</h1>
+          <h1>{serviceType === "Arbitration" ? "Request Arbitration Support" : "Request Legal Assistance"}</h1>
           <p>
             {serviceType === "Arbitration"
-              ? "Share the details of your dispute. Our team will review your enquiry and contact you."
+              ? "Share the details of your dispute. Our team will review your request and contact you."
               : "Tell us what legal guidance you need. Submit your details to request free legal assistance."}
           </p>
         </div>
@@ -79,10 +79,10 @@ export default function EnquiryForm({ serviceType }: { serviceType: ServiceType 
           <label>Describe your requirement *<textarea name="description" required minLength={10} maxLength={5000} rows={5} placeholder="Briefly explain your requirement..." /></label>
           <label>Document reference (optional)<input name="documentName" maxLength={200} placeholder="Enter document name, if applicable" /></label>
           <button className="enquiry-submit" type="submit" disabled={submitting}>
-            {submitting ? "Submitting..." : "Submit Enquiry"}
+            {submitting ? "Sending..." : "Send Request"}
           </button>
           {message && <p className={`form-message ${isError ? "error" : "success"}`} role="status">{message}</p>}
-          <p className="privacy-note">Your enquiry will be securely submitted to SVU Developers. You will remain on this website.</p>
+          <p className="privacy-note">Your details will be securely sent to SVU Developers. You will remain on this website.</p>
         </form>
       </section>
     </main>
